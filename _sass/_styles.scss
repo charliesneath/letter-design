@@ -7,5 +7,20 @@
   position: absolute;
 }
 
-.letter {
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+#typeface {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #CCCCCC;
+  font-size: 16px;
+  text-align: center;
 }
