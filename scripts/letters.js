@@ -46,8 +46,16 @@ function nextLetter() {
   var typefaceId = getRandomInt(0, parseInt(numTypefaces));
   $('#typeface').html(names[typefaceId]);
 
+  // Determine size of letter depending on orientation of screen.
+  if ($('.wrapper').width() > $('.wrapper').height()) {
+    $('body').css('font-size', $('.wrapper').height() * 0.9);
+  } else {
+    $('body').css('font-size', $('.wrapper').width() * 0.9);
+  }
+  // Set the typeface.
   $('body').css('font-family', names[typefaceId]);
-  $('body').css('font-size', $('.wrapper').height() * .8);
+
+  // Prepare for the next letter.
   window.clearTimeout(nextLetter);
   var switchLetter = window.setTimeout(nextLetter, 60000);
 }
