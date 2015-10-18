@@ -2,6 +2,7 @@
 ---
 
 var numTypefaces = {{ site.static_files.size }};
+
 var paths = [];
 var names = [];
 var typefaces = new Array;
@@ -38,14 +39,15 @@ function init() {
 };
 
 function nextLetter() {
-  // Pick a typeface.
-  var typefaceId = getRandomInt(0, parseInt(numTypefaces));
   // Pick a letter.
   var letterId = getRandomInt(0, letters.length);
+  $('#letter').html(letters[letterId]);
+  // Pick a typeface.
+  var typefaceId = getRandomInt(0, parseInt(numTypefaces));
+  $('#typeface').html(names[typefaceId]);
+
   $('body').css('font-family', names[typefaceId]);
   $('body').css('font-size', $('.wrapper').height() * .8);
-  $('#letter').html(letters[letterId]);
-  $('#typeface').html(names[letterId]);
   window.clearTimeout(nextLetter);
   var switchLetter = window.setTimeout(nextLetter, 60000);
 }
