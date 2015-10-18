@@ -1,11 +1,13 @@
 {% for typeface in site.static_files %}
-  {% assign typefaceName = typeface.path | replace: "/fonts/", "" | split: "."%}
+  {% if typeface.path contains '/fonts/'%}
+    {% assign typefaceName = typeface.path | replace: "/fonts/", "" | split: "."%}
 
-<style>
-  @font-face {
-    font-family: "{{typefaceName[0] }}";
-    src: url({{ typeface.path }});
-  }
-</style>
-
+    <style>
+      @font-face {
+        font-family: "{{ typefaceName[0] }}";
+        src: url({{ site.baseurl }}/{{ typeface.path }});
+      }
+    </style>
+    
+  {% end if %}
 {% endfor %}

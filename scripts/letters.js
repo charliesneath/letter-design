@@ -53,13 +53,16 @@ $(function() {
     'Z'
   ];
 
+  // Pick a typeface.
   var typefaceId = getRandomInt(0, parseInt(numTypefaces));
+  // Pick a letter.
   var letterId = getRandomInt(0, letters.length);
   $('body').css('font-family', names[typefaceId]);
   $('body').css('font-size', $('.wrapper').height() * .9);
   $('.letter').html(letters[letterId]);
 })
 
+// Get random number.
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
