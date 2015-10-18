@@ -1,0 +1,11 @@
+{% for typeface in site.static_files %}
+  {% assign typefaceName = typeface.path | replace: "/fonts/", "" | split: "."%}
+
+<style>
+  @font-face {
+    font-family: "{{typefaceName[0] }}";
+    src: url({{ typeface.path }});
+  }
+</style>
+
+{% endfor %}
