@@ -8,6 +8,6 @@
         src: url({{ site.baseurl }}/{{ typeface.path }});
       }
     </style>
-    
-  {% end if %}
+
+  {% endif %}
 {% endfor %}
