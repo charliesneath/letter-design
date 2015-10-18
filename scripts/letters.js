@@ -45,6 +45,7 @@ function nextLetter() {
   $('body').css('font-family', names[typefaceId]);
   $('body').css('font-size', $('.wrapper').height() * .8);
   $('#letter').html(letters[letterId]);
+  $('#typeface').html(names[letterId]);
   window.clearTimeout(nextLetter);
   var switchLetter = window.setTimeout(nextLetter, 60000);
 }
