@@ -3,8 +3,8 @@
 
 <style>
   @font-face {
-    font-family: "{{typefaceName[0] }}";
-    src: url({{ typeface.path }});
+    font-family: "{{ typefaceName[0] }}";
+    src: url({{ site.baseurl }}/{{ typeface.path }});
   }
 </style>
 
